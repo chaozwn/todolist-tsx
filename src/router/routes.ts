@@ -2,51 +2,17 @@ const routes = [
   {
     name: 'openApp',
     path: '/openApp',
-    component: () => import('/@/views/openApp/openApp'),
+    component: () => import('/@/views/openApp/OpenApp'),
   },
   {
-    name: 'root',
-    path: '/',
-    redirect: '/home',
-    component: () => import('/@/components/Basic/index.vue'),
-    children: [
-      {
-        name: 'Home',
-        path: 'home',
-        component: () => import('/@/views/Home/index.vue'),
-        meta: {
-          title: '',
-          keepAlive: true,
-        },
-      },
-      {
-        name: 'List',
-        path: 'list',
-        component: () => import('/@/views/List/index.vue'),
-        meta: {
-          title: '',
-          keepAlive: true,
-        },
-      },
-      {
-        name: 'Member',
-        path: 'member',
-        component: () => import('/@/views/Member/index.vue'),
-        meta: {
-          title: '',
-          keepAlive: true,
-        },
-      },
-    ],
-  },
-  {
-    name: 'Login',
+    name: 'login',
     path: '/login',
-    component: () => import('/@/views/Login/index.vue'),
-    meta: {
-      title: '',
-      keepAlive: true,
-    },
+    component: () => import('/@/views/login/Login'),
+  },
+  {
+    name: 'schedule',
+    path: '/schedule',
+    component: () => import('/@/views/schedule/Schedule'),
   },
 ];
 

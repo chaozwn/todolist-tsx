@@ -4,8 +4,10 @@ import { nutUiComponents } from './plugins/nutUI';
 import { i18n } from '/@/i18n';
 import router from './router';
 import { setupStore } from '/@/store';
+import 'normalize.css/normalize.css';
 import './assets/font/iconfont.css';
 import './assets/app.css';
+import 'virtual:svg-icons-register';
 
 const app = createApp(App);
 app.use(router);

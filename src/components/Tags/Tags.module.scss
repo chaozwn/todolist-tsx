@@ -1,0 +1,31 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 40px;
+  .tags {
+    width: 298px;
+    margin: 0;
+    height: 100%;
+    background: #3c1f7b;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4px;
+    li {
+      display: flex;
+      width: 133px;
+      height: 32px;
+      justify-content: center;
+      align-items: center;
+      font-weight: 450;
+      font-size: 16px;
+    }
+  }
+}
+
+.selected {
+  background: #272430;
+  border-radius: 4px;
+}

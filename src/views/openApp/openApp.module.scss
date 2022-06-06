@@ -1,5 +1,18 @@
-
-
 .container {
-    background: $--bg-color;
+  background: $--bg-color;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  color: white;
+}
+
+:global {
+  .svg-icon-openapp-ontime {
+    width: 240px;
+    height: 48px;
+  }
 }

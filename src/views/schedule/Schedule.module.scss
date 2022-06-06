@@ -1,0 +1,29 @@
+.container {
+    background: $--bg-color;
+    height: 100vh;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+
+    .tags {
+        margin-top: 44px;
+    }
+}
+
+:global {
+    .svg-icon-schedule-ontime {
+        width: 79.73px;
+        height: 16px;
+    }
+
+    .svg-icon-schedule-notifydata {
+        width: 24px;
+        height: 24px;
+        margin-right: 24px;
+    }
+
+    .svg-icon-schedule-more {
+        width: 24px;
+        height: 24px;
+    }
+}

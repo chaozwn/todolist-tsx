@@ -1,0 +1,43 @@
+.container {
+  background: $--bg-color;
+  height: 100vh;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  margin-top: 160px;
+}
+
+.description {
+  display: block;
+  width: 233px;
+  height: 88px;
+  font-weight: 350;
+  font-size: 36px;
+  line-height: 120%;
+  text-align: center;
+  letter-spacing: -0.3px;
+  margin-top: 203px;
+}
+
+.start {
+  width: 298px;
+  height: 56px;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  color: #0A0416;
+  border-radius: 12px;
+  margin-top: 183px;
+  border: none;
+}
+
+:global {
+  .svg-icon-login-ontime {
+    height: 56px;
+    width: 279.0512390136719px;
+  }
+}

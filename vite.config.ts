@@ -2,9 +2,9 @@ import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
 import { resolve } from 'path';
 import { ConfigEnv, UserConfigExport } from 'vite';
-import { createStyleImportPlugin, NutuiResolve } from 'vite-plugin-style-import';
 import { viteMockServe } from 'vite-plugin-mock';
-import eruda from 'vite-plugin-eruda';
+import path from 'path';
+import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 
 const pathResolve = (dir: string) => {
   return resolve(process.cwd(), '.', dir);
@@ -41,14 +41,17 @@ export default function ({ command }: ConfigEnv): UserConfigExport {
     plugins: [
       vue(),
       vueJsx(),
-      createStyleImportPlugin({
-        resolves: [NutuiResolve()],
-      }),
-      eruda(),
       viteMockServe({
         mockPath: './src/mock',
         localEnabled: command === 'serve',
         logger: true,
+      }),
+      createSvgIconsPlugin({
+        // 指定需要缓存的图标文件夹
+        iconDirs: [path.resolve(process.cwd(), 'src/assets/icons')],
+        // 指定symbolId格式
+        symbolId: 'icon-[dir]-[name]',
+        svgoOptions: isProduction,
       }),
     ],
     css: {
