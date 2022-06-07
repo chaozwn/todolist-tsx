@@ -4,17 +4,17 @@ import PageHeader from '/@/components/PageHeader/PageHeader';
 import style from './Schedule.module.scss';
 import SvgIcon from '/@/components/SvgIcon/SvgIcon.vue';
 import Tags, { Tag } from '/@/components/Tags/Tags';
-import Calendar from '/@/components/Calendar/Calendar';
 import { useMouse } from '@vueuse/core';
+import Calendars from '/@/components/Calendar/Calendars';
 
 const Schedule = defineComponent({
     setup() {
         const selected = ref<string>('Schedule')
         const { x, y } = useMouse()
-        console.log(x,y);
-        
+        console.log(x, y);
+
         return () => (
-            <div class={style.container}>
+            <div class={style.container} onTouchmove={(e) => e.preventDefault()}>
                 <PageHeader>
                     {{
                         left: () => (
@@ -33,14 +33,19 @@ const Schedule = defineComponent({
                 <Tags class={style.tags} v-model:selected={selected.value}>
                     <Tag name='Schedule' key="Schedule">{{
                         default: () => (
-                            <Calendar />
+                            <>
+                                <div class={style.calendar}>
+                                     <Calendars />
+                                </div>
+                                <h2 class={style.schedule}>Schedule</h2>
+                            </>
                         )
                     }}</Tag>
                     <Tag name='Note' key='Note'>{{
                         default: () => (
                             <div>
-                              <div>x: {x.value}</div>
-                              <div>y: {y.value}</div>
+                                <div>x: {x.value}</div>
+                                <div>y: {y.value}</div>
                             </div>
                         )
                     }}</Tag>
