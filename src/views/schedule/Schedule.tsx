@@ -6,6 +6,7 @@ import SvgIcon from '/@/components/SvgIcon/SvgIcon.vue';
 import Tags, { Tag } from '/@/components/Tags/Tags';
 import { useMouse } from '@vueuse/core';
 import Calendars from '/@/components/Calendar/Calendars';
+import JobList from '/@/components/JobsList/JobList';
 
 const Schedule = defineComponent({
     setup() {
@@ -15,7 +16,7 @@ const Schedule = defineComponent({
 
         return () => (
             <div class={style.container} onTouchmove={(e) => e.preventDefault()}>
-                <PageHeader>
+                <PageHeader class={style.pageHeader}>
                     {{
                         left: () => (
                             <div>
@@ -38,6 +39,7 @@ const Schedule = defineComponent({
                                      <Calendars />
                                 </div>
                                 <h2 class={style.schedule}>Schedule</h2>
+                                <JobList></JobList>
                             </>
                         )
                     }}</Tag>

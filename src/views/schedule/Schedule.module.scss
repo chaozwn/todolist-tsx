@@ -4,8 +4,14 @@
   color: #fff;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+
+  .pageHeader {
+    height: 95.38px;
+  }
 
   .tags {
+    flex: 1;
     margin-top: 44px;
   }
 }
@@ -21,6 +27,7 @@
   font-size: 16px;
   line-height: 100%;
   margin-top: 32px;
+  margin-bottom: 33px;
 }
 
 :global {
