@@ -34,13 +34,54 @@ const Schedule = defineComponent({
                 <Tags class={style.tags} v-model:selected={selected.value}>
                     <Tag name='Schedule' key="Schedule">{{
                         default: () => (
-                            <>
+                            <div class={style.schedule_main}>
                                 <div class={style.calendar}>
-                                     <Calendars />
+                                    <Calendars />
                                 </div>
                                 <h2 class={style.schedule}>Schedule</h2>
-                                <JobList></JobList>
-                            </>
+                                <JobList class={style.joblist}></JobList>
+                                {/* <div style={{overflow:'scroll'}}>
+                                    <div>1</div>
+                                    <div>1</div>
+                                    <div>1</div>
+                                    <div>1</div>
+                                    <div>1</div>
+                                    <div>1</div>
+                                    <div>1</div>
+                                    <div>1</div>
+                                    <div>1</div>
+                                    <div>1</div>
+                                    <div>1</div>
+                                    <div>1</div>
+                                    <div>1</div>
+                                    <div>1</div>
+                                    <div>1</div>
+                                    <div>1</div>
+                                    <div>1</div>
+                                    <div>1</div>
+                                    <div>1</div>
+                                    <div>1</div>
+                                    <div>1</div>
+                                    <div>1</div>
+                                    <div>1</div>
+                                    <div>1</div>
+                                    <div>1</div>
+                                    <div>1</div>
+                                    <div>1</div>
+                                    <div>1</div>
+                                    <div>1</div>
+                                    <div>1</div>
+                                    <div>1</div>
+                                    <div>1</div>
+                                    <div>1</div>
+                                    <div>1</div>
+                                    <div>1</div>
+                                    <div>1</div>
+                                    <div>1</div>
+                                    <div>1</div>
+                                    <div>1</div>
+                                </div> */}
+                            </div>
                         )
                     }}</Tag>
                     <Tag name='Note' key='Note'>{{

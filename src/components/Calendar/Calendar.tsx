@@ -18,6 +18,10 @@ const Calendar = defineComponent({
         currentTime: {
             type: Object as PropType<any>,
             required: true
+        },
+        isZip: {
+            type: Boolean as PropType<boolean>,
+            default: false
         }
     },
     setup(props, { emit, slots }) {
@@ -39,7 +43,12 @@ const Calendar = defineComponent({
         }
 
         const calenderList = computed(() => {
-            return getDateListByTime(currentTime.value.format('YYYY-MM') + `-01`)
+            const datalist = getDateListByTime(currentTime.value.format('YYYY-MM') + `-01`)
+            if (props.isZip) {
+                return datalist.slice(datalist.length - 14, datalist.length - 7)
+                // return datalist.filter(item => item.isWeek)
+            }
+            return datalist;
         })
 
         const calenderTitle = computed(() => {
@@ -64,7 +73,7 @@ const Calendar = defineComponent({
         })
 
         return () => (
-            <div class={style.container}>
+            <div class={[style.container]}>
                 <div class={style.title}>{calenderTitle.value}</div>
                 <div class={style.item}>
                     {

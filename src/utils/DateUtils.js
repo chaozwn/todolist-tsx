@@ -20,6 +20,7 @@ export function getDay() {
 
 export function getDateListByTime(dTime) {
   const date = moment(dTime);
+  const currentWeek = moment().format('W');
   const currentMonth = date.format('M');
 
   let calenderList = [];
@@ -32,6 +33,7 @@ export function getDateListByTime(dTime) {
       isCurrentMonth: currentMonth === lastMonth.format('M'),
       year: lastMonth.format('YYYY'),
       timeStr: lastMonth.format('YYYYMMDD'),
+      isWeek: currentWeek === lastMonth.format('W') && currentMonth === lastMonth.format('M'),
     });
     // calenderList.push(lastMonth.format('D'));
     lastMonth.add('1', 'days');

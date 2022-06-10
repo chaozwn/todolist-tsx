@@ -33,7 +33,7 @@ const Tags = defineComponent({
                                 >{tag.props?.name}</li>
                         ))}
                     </ol>
-                    <div>
+                    <div class={style.tags_container}>
                         {tags.find(item => item.props?.name === props.selected)}
                     </div>
                 </div>
@@ -51,9 +51,9 @@ export const Tag = defineComponent({
     },
     setup(props, { slots }) {
         return () => (
-            <div>
+            <>
                 {slots.default?.()}
-            </div>
+            </>
         )
     }
 })

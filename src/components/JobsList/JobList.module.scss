@@ -1,9 +1,9 @@
 .jobcontainer {
-  height: 100%;
-  overflow-y: scroll;
   &::-webkit-scrollbar {
     display: none;
   }
+  flex: 1;
+  overflow-y: scroll;
 }
 
 .container {
@@ -11,6 +11,7 @@
   margin: 0 auto;
   justify-content: space-between;
   width: 345px;
+  flex: 1;
 
   .left {
     width: 32px;
@@ -22,9 +23,8 @@
 }
 
 .done {
-}
-
-.noDone {
+    background: #241641 !important;
+    color: #BDBDBD;
 }
 
 .main {

@@ -4,11 +4,6 @@
   color: #fff;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
-
-  .pageHeader {
-    height: 95.38px;
-  }
 
   .tags {
     flex: 1;
@@ -16,9 +11,13 @@
   }
 }
 
+.pageHeader {
+  // flex: 0 0 95.38px;
+}
+
 .calendar {
   margin-top: 24px;
-  height: 406px;
+  // height: 406px;
 }
 
 .schedule {
@@ -26,8 +25,18 @@
   font-weight: 700;
   font-size: 16px;
   line-height: 100%;
-  margin-top: 32px;
-  margin-bottom: 33px;
+  padding: 32px 0;
+}
+
+.schedule_main {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.joblist {
+  flex: 1;
+  overflow: hidden;
 }
 
 :global {

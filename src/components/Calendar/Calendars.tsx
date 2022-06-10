@@ -13,6 +13,8 @@ const Calendars = defineComponent({
 
         const calendar = ref<HTMLElement | null>(null)
 
+        const isZip = ref(false)
+
         const { isSwiping, direction } = useSwipe(calendar)
 
         const fadeName = computed(() => {
@@ -20,8 +22,11 @@ const Calendars = defineComponent({
                 return 'fade-left'
             } else if (direction.value === 'RIGHT') {
                 return 'fade-right'
+            } else if (direction.value === 'UP') {
+                isZip.value = true
+                return 
             } else {
-                return ''
+                isZip.value = false
             }
         })
 
@@ -57,14 +62,14 @@ const Calendars = defineComponent({
         })
 
         return () => (
-            <div class={style.container}>
-                <div class={style.main} ref={calendar} >
+            <div class={[style.container,isZip.value ? '' :style.unzip]}>
+                <div class={[style.main,isZip.value ? style.fade_up : style.fade_down]} ref={calendar} >
                     <TransitionGroup
                         name={fadeName.value}
                         appear
                     >
-                        {datalist.value.filter((item) => item.format('YYYYMM') === (show.value.format('YYYYMM'))).map((item, index) => (
-                            <Calendar currentTime={item} key={item.format('YYYYMM')}></Calendar>
+                        {datalist.value.filter((item) => item.format('YYYYMM') === (show.value.format('YYYYMM'))).map((item) => (
+                            <Calendar currentTime={item} key={item.format('YYYYMM')} isZip={isZip.value}></Calendar>
                         ))}
                     </TransitionGroup>
                 </div>

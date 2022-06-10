@@ -4,9 +4,9 @@
     align-items: center;
     height: 40px;
   .tags {
+    height: 40px;
     width: 298px;
     margin: 0;
-    height: 100%;
     background: #3c1f7b;
     list-style: none;
     display: flex;
@@ -23,6 +23,11 @@
       font-size: 16px;
     }
   }
+}
+
+.tags_container {
+  flex: 1;
+  overflow: hidden;
 }
 
 .selected {

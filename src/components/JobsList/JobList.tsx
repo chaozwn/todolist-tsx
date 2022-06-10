@@ -34,6 +34,13 @@ const JobList = defineComponent({
                     Place: 'Anomali Office',
                     Notes: 'Nothing',
                     Done: false
+                },
+                {
+                    Title: 'Meeting with Anomali Team',
+                    Time: '07.00 am - 10.00 am',
+                    Place: 'Anomali Office',
+                    Notes: 'Nothing',
+                    Done: true
                 }
             ]
         }, {
@@ -58,7 +65,7 @@ const JobList = defineComponent({
         return () => (
             <div class={style.jobcontainer}>
                 {jobItems.map(jobItem => (
-                    <Job jobItem={jobItem} key={jobItem.day}/>
+                    <Job jobItem={jobItem} key={jobItem.day} />
                 ))}
             </div>
         )
@@ -81,13 +88,13 @@ const Job = defineComponent({
                 </div>
                 <div class={style.right}>
                     {props.jobItem?.jobDetails.map(item => (
-                        <div class={style.main}>
+                        <div class={[style.main,item.Done? style.done : '']}>
                             <div class={style.header}>
                                 <div class={style.title}>
                                     {item.Title}
                                 </div>
                                 <div class={style.icon}>
-                                    <SvgIcon name="gou" className='gou'></SvgIcon>
+                                    { item.Done? <SvgIcon name="gou" className='gou'></SvgIcon> : null}
                                 </div>
                             </div>
                             <div class={style.section}>
