@@ -1,0 +1,46 @@
+.notecard__container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 16px;
+  gap: 12px;
+  width: 366px;
+  margin: 0 auto 16px;
+
+  background: #7e64ff;
+  border-radius: 8px;
+
+  &__content {
+    font-style: normal;
+    font-weight: 325;
+    font-size: 14px;
+    line-height: 120%;
+    /* or 17px */
+
+    /* #FFFFFF */
+    white-space: pre-wrap;
+    color: #ffffff;
+  }
+
+  &__footer {
+    &__left {
+      font-style: normal;
+      font-weight: 300;
+      font-size: 10px;
+      line-height: 100%;
+      color: #ffffff;
+    }
+
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+:global {
+  .svg-icon-note-note {
+    width: 12px;
+    height: 12px;
+  }
+}
